@@ -7,6 +7,8 @@ console.log('JS OK');
 
 //Chiedere all'utente di inserire un numero per 10 volte (con prompt)
 
+const result = document.getElementById('result');
+
 let sum = 0; 
 
 for (let i = 0; i < 10; i++) {
@@ -18,5 +20,10 @@ for (let i = 0; i < 10; i++) {
 
     console.log(sum);
 
-
 }
+
+
+// Il programma stampa la somma di tutti i numeri inseriti
+
+result.innerHTML = "La somma dei numeri che hai scelto è:" + `<p>${sum}</p>`;
+
