@@ -6,7 +6,7 @@ console.log('JS OK');
 
 // Creo lista degli invitati 
 
-const guestName = ["Romolo", "Numa Pompilio", "Tullo Ostilio", "Anco Marzio", "Tarquinio Prisco","Servio Tullio", "Tarquinio il Superbo"];
+const guestNames = ['Romolo', 'Numa Pompilio', 'Tullo Ostilio', 'Anco Marzio', 'Tarquinio Prisco', 'Servio Tullio', 'Tarquinio il Superbo'];
 
 
 // Prendo elementi dalla pagina 
@@ -26,43 +26,46 @@ btnUser.addEventListener("click", function(){
 
     const userName = document.getElementById('userName').value;
     
-    let userAllowed = false; 
+
+    // Flag validazione invitati
+
+    let isAllowed = false; 
 
 
-    // Controllo il nome inserito tra gli invitati 
+    // Controllo che il nome inserito sia tra gli invitati 
 
-    for (let i = 0; i < guestName.length && !userAllowed; i++) {
+    for (let i = 0; !isAllowed && i < guestNames.length; i++) {
 
-        const currentName = guestName[i];
-        console.log(currentName, guestName);
+        const guest = guestNames[i];
 
-        
-        if (currentName === guestName) {
+        if (userName === guest) {
 
-           userAllowed = true;
+           isAllowed = true;
 
-           console.log('userAllowed');
 
         }
 
-    
-
+        console.log(guestNames);
 
     }
 
-    // Monto il messaggio
+    // Monto il messaggio (metodo ternario)
 
-    if (userAllowed) {
+        // contentMessage = isAllowed ? 'Il tuo invito è confermato!' : 'Non sei stato invitato alla festa del Grande Gatsby, ci dispiace.';
+
+
+        if (isAllowed) {
         
-        contentMessage = `<p>"Il tuo invito è confermato!"</p>`;
-
-
+            contentMessage = `<p>"Il tuo invito è confermato!"</p>`;
+    
+    
         } else {
             contentMessage = `<p>"Non sei stato invitato alla festa del Grande Gatsby, ci dispiace."</p>`;
         }
-
-
+    
+    
         console.log(contentMessage);
+
 
   
     

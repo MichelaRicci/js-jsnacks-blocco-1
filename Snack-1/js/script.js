@@ -11,14 +11,27 @@ const result = document.getElementById('result');
 
 let sum = 0; 
 
-for (let i = 0; i < 10; i++) {
+
+// Flag validazione numeri
+
+let isValid = true;
+
+for (let i = 0; i < 10 && isValid; i++) {
     let numbers = parseInt(prompt('Inserisci un numero').trim());
 
     console.log(numbers);
 
-    sum = sum + numbers;
 
-    console.log(sum);
+    if(isNaN(numbers)) {
+        isValid = false;
+
+    } else {
+
+        sum = sum + numbers;
+
+        console.log(sum);
+
+    }
 
 }
 
